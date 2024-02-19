@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  dev-db:
+    image: postgres:16
+    ports:
+      - ${PORT}:${PORT}
+    environment:
+      POSTGRES_USER: ${USER}
+      POSTGRES_PASSWORD: ${PASSWORD}
+      POSTGRES_DB: ${DB}
+    networks:
+      - billboard
+networks:
+  billboard:
